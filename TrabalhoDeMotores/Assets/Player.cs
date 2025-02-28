@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     public bool andando = false;
 
+    //public bool caindo = false;
+
   private Rigidbody2D _rigidbody2D;
   private SpriteRenderer  _spriteRenderer;
   private Animator _animator;
@@ -44,6 +46,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         andando = false;
+        //caindo = false;
         
       if(Input.GetKey(KeyCode.LeftArrow))
       {
@@ -72,7 +75,7 @@ public class Player : MonoBehaviour
          }
       }
 
-        if (Input.GetKeyDown(KeyCode.Space) && noChao == true)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && noChao == true)
         {
             _rigidbody2D.AddForce(new Vector2(0, 1) * focaPulo,ForceMode2D.Impulse);
 
@@ -80,6 +83,7 @@ public class Player : MonoBehaviour
         }
 
         _animator.SetBool("Andando",andando);
+        _animator.SetBool("Caindo", !noChao);
         
      
     }
