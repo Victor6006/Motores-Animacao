@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int pontos = 0;
+
     public float velocidade = 10f;
     public float forcaPulo = 10f;
     public float forcaMola = 15f; // Força da mola
